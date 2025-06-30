@@ -1,7 +1,7 @@
 # Hi, I'm Hamza Ghojaria! 👋
 
 ## 🚀 About Me:
-I'm a Data Scientist with expertise in Python, Generative AI, Machine Learning, SQL, and Cloud Technologies. With over **5 years in IT** and **3+ years specializing in Data Science**, I've worked on various AI-driven solutions, including recommendation systems, document comparison engines, and predictive models.
+I'm a Data Scientist with expertise in Python, Generative AI, Machine Learning, SQL, and Cloud Technologies. With over **6 years in IT** and **3+ years specializing in Data Science**, I've worked on various AI-driven solutions, including recommendation systems, document comparison engines, and predictive models.
 
 <!-- #### 📄 [⬇️ Download My Resume](https://github.com/hamzaghojaria/hamzaghojaria/raw/main/Hamza%20Ghojaria%20Resume.pdf) -->
 
