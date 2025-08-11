@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hamza Ghojaria — Data Scientist</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body,
+    html {
+      height: 100%;
+      background: #0f0f15;
+      color: #eee;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .name {
+      font-weight: 900;
+      font-size: 3rem;
+      background: linear-gradient(45deg, #ff00cc, #3333ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.3s ease;
+    }
+
+    .name:hover {
+      transform: scale(1.05);
+    }
+
+    .subtitle {
+      color: #ccc;
+      max-width: 650px;
+      line-height: 1.6
+    }
+
+    .card {
+      background: #12121a;
+      padding: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    h2 {
+      color: #ff33cc;
+      margin-bottom: 0.6rem
+    }
+
+    ul {
+      list-style: none
+    }
+
+    .skill {
+      display: inline-block;
+      margin: 6px 8px 6px 0;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #440077, #7700ff);
+      font-weight: 700;
+      transition: background 0.3s ease;
+    }
+
+    .skill:hover {
+      background: linear-gradient(135deg, #7700ff, #ff33cc);
+    }
+
+    .meta {
+      color: #9aa0b4;
+      font-size: 0.95rem
+    }
+
+    a.contact {
+      display: inline-block;
+      margin-top: 0.6rem;
+      text-decoration: none;
+      color: #fff;
+      background: #ff33cc;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    a.contact:hover {
+      background: #ff66dd;
+      transform: scale(1.05);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem
+    }
+
+    .job {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      padding: 1rem;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .job:hover {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    }
+
+    .job h3 {
+      margin-bottom: 0.2rem
+    }
+
+    .job .period {
+      color: #9aa0b4;
+      font-size: 0.9rem
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #555;
+      font-size: 0.9rem
+    }
+
+    .links a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 12px;
+      transition: color 0.3s ease;
+    }
+
+    .links a:hover {
+      color: #ff33cc;
+    }
+
+    .download-resume {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 0.9rem;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.4rem 0.8rem;
+      background: #1f6feb;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .download-resume:hover {
+      background: #3a8bff;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width:900px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .right,
+      .left {
+        flex: 1 1 100%;
+      }
+    }
+
+    @media (max-width:600px) {
+      .name {
+        font-size: 2rem
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1.2rem
+      }
+
+      .card {
+        padding: 1rem;
+      }
+
+      .skill {
+        padding: 4px 8px;
+        font-size: 0.85rem;
+      }
+    }
+
+
+    .hero {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
+    .left-intro {
+      flex: 1 1 auto;
+    }
+
+    .contact-card {
+      min-width: 240px;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .contact-card {
+        max-width: 100%;
+      }
+    }
+
+    .container {
+      max-width: 1300px;
+    }
+
+    .left,
+    .right {
+      flex: 1 1 520px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="left-intro">
+        <div class="name">Hamza Ghojaria</div>
+        <div class="meta"><b>Data Scientist • Generative AI • ML Engineering</b></div>
+        <p class="subtitle">Data Science professional with 6+ years of IT experience and a strong foundation in
+          Generative AI, Machine Learning, NLP and scalable data-driven solutions across finance, e-commerce and cloud
+          platforms.</p>
+        <div style="margin-top:12px">
+          <a class="contact" href="https://www.linkedin.com/in/hamzaghojaria/" target="_blank">LinkedIn</a>
+          <a class="contact" href="https://github.com/hamzaghojaria" target="_blank">GitHub</a>
+          <a class="download-resume" href="Hamza Ghojaria Resume.pdf" target="_blank">Download Resume (PDF)</a>
+        </div>
+      </div>
+
+      <div class="contact-card card ">
+        <div style="font-weight:800; font-size:1.1rem; color:#fff">Contact</div>
+        <div class="meta" style="margin-top:8px"><strong>Contact No. +91 98922 03101 (IN)</strong></div>
+        <div class="meta"><strong>Email: hamza.ghojaria123@gmail.com</strong></div>
+        <div class="meta"><strong>Location: Mumbai, India</strong></div>
+      </div>
+    </header>
+
+
+    <section class="row">
+      <div class="left card">
+        <h2><u>Professional Summary</u></h2>
+        <p>Data Science professional with 6+ years of IT experience. Proven expertise in building production-ready ML
+          and Generative AI systems using Python, FastAPI, Azure, vector DBs and SQL. Experience spans document
+          intelligence, recommender systems, propensity modeling and end-to-end ML pipelines.</p>
+
+        <h2 style="margin-top:12px"><u>Skills</u></h2>
+        <div>
+          <span class="skill">Python</span>
+          <span class="skill">LLM / Generative AI</span>
+          <span class="skill">Machine Learning</span>
+          <span class="skill">NLP</span>
+          <span class="skill">FastAPI / Flask</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Azure</span>
+          <span class="skill">GCP</span>
+          <span class="skill">Data Engineering</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">Tableau / PowerBI</span>
+        </div>
+
+        <h2 style="margin-top:12px"><u>Education</u></h2>
+        <div class="timeline">
+          <div class="job">
+            <h3>M.Tech — Computer Engineering</h3>
+            <div class="period"><i>Sardar Patel Institute Of Technology, Mumbai University</i></div>
+            <div class="period"><i>May 2020 - May 2022</i> • CGPA: 8.1/10</div>
+          </div>
+
+          <div class="job">
+            <h3>B.E — Electronics & Telecommunications</h3>
+            <div class="period"><i>Rizvi College of Engineering, Mumbai University</i></div>
+            <div class="period"><i>May 2015 - May 2018</i> • CGPA: 6.1/10</div>
+          </div>
+        </div>
+
+        <h2 style="margin-top:12px"><u>Certifications</u></h2>
+        <div class="timeline">
+          <div class="job">
+            <strong>Introduction to Generative AI</strong>
+            <div class="meta">Google</div>
+          </div>
+          <div class="job">
+            <strong>Google Cloud Certified Professional Cloud Architect</strong>
+            <div class="meta">Qwiklabs</div>
+          </div>
+          <div class="job">
+            <strong>IBM WatsonX Foundations</strong>
+            <div class="meta">IBM</div>
+          </div>
+          <div class="job">
+            <strong>Text Prompt Engineering Techniques</strong>
+            <div class="meta">Google</div>
+          </div>
+          <div class="job">
+            <strong>LangChain for LLM Application Development</strong>
+            <div class="meta">DeepLearning.AI</div>
+          </div>
+          <div class="job">
+            <strong>Develop Generative AI solutions with Azure OpenAI Service</strong>
+            <div class="meta">Microsoft</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right card">
+        <h2><u>Experience</u></h2>
+        <div class="timeline">
+          <div class="job">
+            <h3>Data Scientist — LTIMindtree</h3>
+            <div class="period"><i>Mar 2024 – Jul 2025</i></div>
+            <ul>
+              <li>Built Python & FastAPI-based <b>Document Compare Engine</b> and <b>PDF Extractor</b> for finance
+                clients.</li>
+              <li>Worked with Azure OpenAI, Azure Blob Storage, and Document Intelligence to extract, chunk, embed, and
+                store data in vector databases.</li>
+              <li>Led end-to-end pipelines including async processing with <code>asyncio</code>, Pydantic validation,
+                and React frontends.</li>
+              <li>Reduced errors by ~80% and cut manual processing time by ~70%.</li>
+            </ul>
+            <ul>
+              <li><b><u>Document Compare Engine</u></b> — semantic sentence-level comparison across PDFs, Word, JSON and
+                Excel.
+              </li>
+              <li><b><u>PDF Extractor</u></b> — extracted rich text + metadata (font, color, bounding boxes) using
+                Aspose.PDF
+                and
+                structured output into Excel using LLMs.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Associate Data Science & AI — Hansa Cequity</h3>
+            <div class="period"><i>May 2022 – Mar 2024</i></div>
+            <p>Built recommendation engines and propensity models for e-commerce and retail clients. Implemented
+              FP-growth sequence models and popularity-based recommenders resulting in increased retention and sales.
+            </p>
+            <ul>
+              <li><b><u>Recommendation Engine</u></b> — sequence & popularity models; +50% retention time, +10% sales uplift.
+              </li>
+              <li>Referral Propensity Model — XGBoost model improving referral rate by ~25%.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Data Science Intern — CRISIL</h3>
+            <div class="period"><i>Dec 2021 – Apr 2022</i></div>
+            <p>Developed end-to-end ML pipelines, Flask REST APIs and PDF table scraping tools. Built multi-model
+              comparison pipelines to accelerate model selection.</p>
+          </div>
+
+          <div class="job">
+            <h3>Associate Software Test Engineer — Media.Net</h3>
+            <div class="period"><i>Mar 2019 – Mar 2021</i></div>
+            <p>Automated test scripts in Python, implemented web-scraping for monitoring, and improved product quality
+              process through automation.</p>
+          </div>
+
+          <div class="job">
+            <h3>Team Member — QA & Support — AlphaCentrix</h3>
+            <div class="period"><i>Jun 2018 – Feb 2019</i></div>
+            <p>Maintained ETL tools (VBScript), executed data migrations and managed finance client operations including
+              SQL updates.</p>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <footer>
+      &copy; 2025 Hamza Ghojaria — Built with ❤️ • <span class="meta">Last updated: Aug 11, 2025</span>
+    </footer>
+  </div>
+</body>
+
+</html>
